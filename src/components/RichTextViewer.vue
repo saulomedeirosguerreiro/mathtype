@@ -1,5 +1,5 @@
 <template>
-  <div v-ref="parseMathML" v-html="text" />
+  <component class="teste" :is="tag" v-ref="parseMathML" v-html="text" />
 </template>
 
 <script>
@@ -11,6 +11,10 @@ loadMathTypeViewer();
 export default {
   name: "RichTextViewer",
   props: {
+    tag: {
+      type: String,
+      default: "div",
+    },
     text: {
       type: String,
       required: true,
